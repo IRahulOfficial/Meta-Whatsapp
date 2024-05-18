@@ -3,15 +3,17 @@ import { useState } from "react";
 import Login from "./components/common/Login";
 import Header from "./components/common/Header";
 import SideBar from "./components/common/SideBar";
+import Profile from "./components/screens/Profile";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <Header/>
+      {/* <Header/> */}
       <SideBar/>
       {/* <Login/> */}
+      {/* <Profile/> */}
       
     </>
   );
