@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import logo from "../../assets/images/logo.png";
+import {_validatelogin} from "../../methods/login"
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function test(event) {
-    event.preventDefault();
-    alert(email + password);
-  }
+
+  
 
   return (
     <>
@@ -21,7 +20,7 @@ function Login() {
             <h1 className="text-2xl font-semibold text-center text-green-500 mt-8 mb-12">
               Login
             </h1>
-            <form onSubmit={test}>
+            <form>
               <div className="mb-10">
                 <label className="input input-bordered flex items-center gap-2">
                   <svg
@@ -65,7 +64,8 @@ function Login() {
                 </a>
               </div>
               <button
-                type="submit"
+                type="button"
+                onClick={() => {_validatelogin(email,password)}}
                 className="w-44 bg-green-500 text-white py-2 rounded-lg mx-auto block focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 mt-4 mb-6"
               >
                 Login
