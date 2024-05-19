@@ -33,13 +33,13 @@ function Profile() {
         </ol>
         </nav>
 
-        <div className='border-solid border-2 border-gray-600 rounded-xl mt-5 p-0 py-3'>
-            <h2 className="mb-4 text-2xl text-center font-extrabold leading-none tracking-tight text-green-500 md:text-2xl lg:text-4xl dark:text-white">Send Simple Text Messages</h2>
+        <div className='border-solid border-2 border-gray-600 rounded-xl mt-5 p-0 py-3 bg-gradient-to-r from-green-500'>
+            <h2 className="mb-4 text-2xl text-center font-extrabold leading-none tracking-tight text-white lg:text-4xl">Send Simple Text Messages</h2>
         </div>
     <div className=''>
         <form className="mb-6 md:grid-cols-2 mt-10">
             <div className="relative z-0 w-full mb-5 group">
-                <label htmlFor="phone-input" className="block mb-2 text-xl font-medium text-gray-900 dark:text-white">Phone number:</label>
+                <label htmlFor="phone-input" className="block mb-2 text-2xl font-bold text-green-500 dark:text-white">Phone number:</label>
                 <div className="relative">
                     <div className="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none">
                         <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 19 18">
@@ -50,11 +50,11 @@ function Profile() {
                 </div>
             </div>
             <div className="relative z-0 w-full mb-5 group">
-                <label htmlFor="message" className="block mb-2 text-xl font-medium text-gray-900 dark:text-white">Your message:</label>
-                <textarea id="message" rows="8" className="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write Your Message Here..."></textarea>
+                <label htmlFor="message" className="block mb-2 text-2xl font-bold text-green-500 dark:text-white">Your message:</label>
+                <textarea id="message" rows="5" className="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write Your Message Here..."></textarea>
             </div>
             <div className="text-center">
-                <button type="submit" className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-xl px-36 py-3.5 text-center me-2 mb-2">Send Message</button>
+                <button type="submit" className="text-white w-full bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-xl sm:px-36 py-3.5 text-center me-2 mb-2 sm:w-1/2 px-24">Send Message</button>
             </div>
         </form>
         </div>
