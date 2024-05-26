@@ -11,8 +11,8 @@ function App() {
   return (
     <>
       {/* <Header/> */}
-      <SideBar/>
-      {/* <Login/> */}
+      {/* <SideBar/> */}
+      <Login/>
       {/* <Profile/> */}
       
     </>
