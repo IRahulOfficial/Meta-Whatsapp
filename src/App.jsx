@@ -3,7 +3,7 @@ import { useState } from "react";
 import Login from "./components/common/Login";
 import Header from "./components/common/Header";
 import SideBar from "./components/common/SideBar";
-import Profile from "./components/screens/Profile";
+import SendSimpleMsg from "./components/screens/SendSimpleMsg";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -11,9 +11,9 @@ function App() {
   return (
     <>
       {/* <Header/> */}
-      {/* <SideBar/> */}
-      <Login/>
-      {/* <Profile/> */}
+      <SideBar/>
+      {/* <Login/> */}
+      <SendSimpleMsg/>
       
     </>
   );
