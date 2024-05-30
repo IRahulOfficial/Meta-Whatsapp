@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import logo from "../../assets/images/logo.png";
-import {_validatelogin} from "../../methods/login"
-
+import { _validatelogin } from "../../methods/login";
+import { useForm } from "react-hook-form";
+import { DevTool } from "@hookform/devtools";
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-
-  
-
+  const form = useForm();
+  const { register, control, handleSubmit, formState } = form;
+  const { errors } = formState;
+  const test = (data) => {
+    console.log("Form Submit", data);
+  };
   return (
     <>
       <div className="bg-base-100 min-h-screen w-screen">
@@ -20,7 +21,7 @@ function Login() {
             <h1 className="text-2xl font-semibold text-center text-green-500 mt-8 mb-12">
               Login
             </h1>
-            <form>
+            <form onSubmit={handleSubmit(test)} noValidate>
               <div className="mb-10">
                 <label className="input input-bordered flex items-center gap-2">
                   <svg
@@ -32,8 +33,18 @@ function Login() {
                     <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
                     <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                   </svg>
-                  <input type="text" onChange={(e) => setEmail(e.target.value)} className="grow" placeholder="Email" />
+                  <input
+                    type="text"
+                    className="grow"
+                    placeholder="Email"
+                    {...register("email", {
+                      required: "Email is required",
+                      pattern:"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                      
+                    },)}
+                  />
                 </label>
+                <p className="ml-2 text-red-500">sd</p>
               </div>
               <div className="mb-10">
                 <label className="input input-bordered flex items-center gap-2">
@@ -53,7 +64,7 @@ function Login() {
                     type="password"
                     className="grow"
                     placeholder="Password"
-                    onChange={(e) => setPassword(e.target.value)}
+                    {...register("password")}
                   />
                 </label>
                 <a
@@ -64,18 +75,17 @@ function Login() {
                 </a>
               </div>
               <button
-                type="button"
-                onClick={() => {_validatelogin(email,password)}}
+                type="submit"
                 className="w-44 bg-green-500 text-white py-2 rounded-lg mx-auto block focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 mt-4 mb-6"
               >
                 Login
               </button>
             </form>
+            <DevTool control={control} />
           </div>
         </div>
       </div>
     </>
-    
   );
 }
 
